@@ -38,6 +38,14 @@ $(document).ready(function () {
     ctx.lineWidth = 1;
     ctx.strokeStyle = "#19ffff";
     ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "white";
+    ctx.moveTo(0, +canvas.height);
+    ctx.lineTo(0, -canvas.height);
+    ctx.moveTo(canvas.width, 0);
+    ctx.lineTo(-canvas.width, 0);
+    ctx.stroke();
   }
 
   render();
