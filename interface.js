@@ -10,6 +10,7 @@ $(document).ready(function () {
   function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     renderMaxDistance();
+    renderMaxView();
     renderMob();
   }
 
@@ -20,6 +21,15 @@ $(document).ready(function () {
     ctx.fillStyle = "#ff1919";
     ctx.fill();
     ctx.closePath();
+  }
+
+  function renderMaxView() {
+    const { x, y } = mob.getViewDistanceVector();
+    ctx.beginPath();
+    ctx.strokeStyle = "white";
+    ctx.moveTo(mob.xPos, mob.yPos);
+    ctx.lineTo(x, y);
+    ctx.stroke();
   }
 
   function renderMaxDistance() {
